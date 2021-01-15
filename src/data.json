@@ -1,0 +1,70 @@
+{
+    "products":[
+        {
+            "_id":"1",
+            "name":"Product 1",
+            "category":"toy",
+            "image": "/images/product-1.jpg",
+            "price":600,
+            "brand":"nono",
+            "rating":5,
+            "numReviews":10,
+            "countInStock":6
+        },
+        {
+            "_id":"2",
+            "name":"Product 2",
+            "category":"Soap",
+            "image": "/images/product-2.jpg",
+            "price":600,
+            "brand":"nono",
+            "rating":5,
+            "numReviews":10,
+            "countInStock":6
+        },
+        {
+            "_id":"3",
+            "name":"Product 3",
+            "category":"piggy bank",
+            "image": "/images/product-3.jpg",
+            "price":2000,
+            "brand":"nono",
+            "rating":5,
+            "numReviews":10,
+            "countInStock":6
+        },
+        {
+            "_id":"4",
+            "name":"Product 4",
+            "category":"toy",
+            "image": "/images/product-4.jpg",
+            "price":800,
+            "brand":"nono",
+            "rating":5,
+            "numReviews":10,
+            "countInStock":6
+        },
+        {
+            "_id":"5",
+            "name":"Product 5",
+            "category":"blanket",
+            "image": "/images/product-5.jpg",
+            "price":750,
+            "brand":"nono",
+            "rating":4.5,
+            "numReviews":13,
+            "countInStock":6
+        }, {
+            "_id":"6",
+            "name":"fancy pen",
+            "category":"pen",
+            "image": "/images/product-6.jpeg",
+            "price":60,
+            "brand":"nono",
+            "rating":4,
+            "numReviews":100,
+            "countInStock":60
+        }
+
+    ]
+}
