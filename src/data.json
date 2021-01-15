@@ -64,6 +64,28 @@
             "rating":4,
             "numReviews":100,
             "countInStock":60
+        },
+        {
+            "_id":"7",
+            "name":"peppa pig",
+            "category":"toy",
+            "image": "/images/product-7.jpeg",
+            "price":60,
+            "brand":"nono",
+            "rating":4,
+            "numReviews":100,
+            "countInStock":60
+        },
+        {
+            "_id":"8",
+            "name":" train",
+            "category":"train train",
+            "image": "/images/product-8.jpg",
+            "price":1000,
+            "brand":"nono",
+            "rating":4,
+            "numReviews":100,
+            "countInStock":60
         }
 
     ]
