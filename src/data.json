@@ -79,7 +79,7 @@
         {
             "_id":"8",
             "name":" train",
-            "category":"train train",
+            "category":"toy",
             "image": "/images/product-8.jpg",
             "price":1000,
             "brand":"nono",
