@@ -11,7 +11,7 @@ export default class App extends Component {
     super();
     this.state = {
       products: data.products,
-      cartItems:[],
+      cartItems:JSON.parse(localStorage.getItem("cartItems")),
       sort : "",
       category:""
     };
@@ -29,6 +29,8 @@ export default class App extends Component {
     { cartItems.push({...product,count:1})}
 
     this.setState({cartItems});
+    localStorage.setItem("cartItems",
+    JSON.stringify(cartItems));
    
   }
   sortProducts=(events) =>
