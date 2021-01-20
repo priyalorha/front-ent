@@ -11,7 +11,7 @@ export default class App extends Component {
     super();
     this.state = {
       products: data.products,
-      cartItems:JSON.parse(localStorage.getItem("cartItems")),
+      cartItems:localStorage.getItem("cartItems")? JSON.parse(localStorage.getItem("cartItems")):[],
       sort : "",
       category:""
     };
