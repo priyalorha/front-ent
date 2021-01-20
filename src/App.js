@@ -17,6 +17,11 @@ export default class App extends Component {
     };
   }
 
+  createOrder = (order) =>
+  {
+    alert (`Need to save order for  + ${order.name}`)
+  }
+
 
   addToCart = (product)=>
   {
@@ -90,10 +95,11 @@ export default class App extends Component {
           category = {this.state.category}
           filterProducts ={this.filterProducts}
           sortProducts = {this.sortProducts} />
-            <ProductList products={this.state.products} addToCart={this.addToCart }/></div>
+          <ProductList products={this.state.products} addToCart={this.addToCart }/></div>
           <div className="sidebar"><Cart cartItems ={this.state.cartItems}
           
           removeFromCart = {this.removeFromCart}
+          createOrder = {this.createOrder}
           /></div>
         </div>
 
