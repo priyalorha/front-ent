@@ -22,6 +22,9 @@ export default class Products extends Component {
     return (
       <div>
         <Fade bottom cascade>
+        {!this.props.products ? (
+            <div>Loading...</div>
+          ) : (
           <ul className="products">
             {this.props.products.map((product) => (
               <li key={product._id}>
@@ -30,7 +33,7 @@ export default class Products extends Component {
                     href={"#" + product._id}
                     onClick={() => this.openModal(product)}
                   >
-                    <img src={product.image} alt={product.title}></img>
+                    <img src={product.image} alt={product.title} className="image"></img>
                     <p>{product.category}</p>
                   </a>
                   <div className="product-price">
@@ -45,7 +48,7 @@ export default class Products extends Component {
                 </div>
               </li>
             ))}
-          </ul>
+          </ul>)}
         </Fade>
         {product && (
           <Modal isOpen={true} onRequestClose={this.closeModal}>
@@ -54,7 +57,7 @@ export default class Products extends Component {
                 x
               </button>
               <div className="product-details">
-                <img src={product.image} alt={product.category}></img>
+                <img src={product.image} alt={product.category} className="img"></img>
                 <div className="product-details-description">
                   <p>
                     <strong>{product.category}</strong>
