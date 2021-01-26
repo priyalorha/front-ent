@@ -1,9 +1,10 @@
 import formatCurrency from "../util";
 import React, { Component } from 'react';
 import Fade from 'react-reveal/Fade';
+import {connect} from 'react-redux';
+import {removeFromCart} from '../actions/cartAction'
 
-
-export default class cart extends Component {
+class cart extends Component {
   constructor(props)
   {
     super(props);
@@ -34,6 +35,7 @@ export default class cart extends Component {
     }
     render() {
         const { cartItems } = this.props;
+        console.log(`this cartItem ${JSON.stringify(cartItems)}`)
         return (
           <div>
             {cartItems.length === 0 ? (
@@ -55,12 +57,12 @@ export default class cart extends Component {
                         <img src={item.image} alt={item.title}></img>
                       </div>
                       <div>
-                        <div>{item.title}</div>
+                        <div>{item.name}</div>
                         <div className="right">
                           {formatCurrency(item.price)} x {item.count}{" "}
                           <button
                             className="button"
-                            onClick={() => this.props.removeFromCart(item._id)}
+                            onClick={() => this.props.removeFromCart(item)}
                           >
                             Remove
                           </button>
@@ -141,7 +143,14 @@ export default class cart extends Component {
     );
   }
 }
-                    
+           
+
+export default connect(
+  (state) => ({
+    cartItems: state.cart.cartItems,
+  }),
+  { removeFromCart}
+)(cart);
     
 
                     
