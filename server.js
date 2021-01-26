@@ -7,7 +7,13 @@ const app = express();
 
 app.use(bodyParser.json());
 
-mongoose.connect("mongodb://localhost/nono", {
+
+app.use("/", express.static(__dirname + "/build"));
+app.get("/", (req, res) => res.sendFile(__dirname + "/build/index.html"));
+
+mongoose.connect(
+  process.env.MONGODB_URL || "mongodb://localhost/nono",
+  {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
@@ -77,7 +83,7 @@ app.post("/api/orders", async (req, res) => {
     !req.body.total ||
     !req.body.cartItems
   ) {
-    return res.send({ message: `Data is required. ${JSON.stringify(req.body)}`  });
+    return res.send({ message: `Data is required. ${JSON.stringify(req.bod)}`  });
   }
   const order = await Order(req.body).save();
   res.send(order);
